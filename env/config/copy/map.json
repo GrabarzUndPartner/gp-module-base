@@ -1,0 +1,17 @@
+{
+  "name": "copy",
+  "task": "gp-boilerplate-environment/lib/tasks/copy",
+  "config": {
+    "subtasks": [{
+      "name": "default",
+      "files": {
+        "src": ["{test,src}/assets/**/*.{ttf,woff,eot,svg,ico,png,jpg,gif}"],
+        "dest": "<%= destination %>/assets"
+      }
+    }],
+    "watch": [{
+      "src": ["{test,src}/assets/**/*.{ttf,woff,eot,svg,ico,png,jpg,gif}"],
+      "tasks": ["default"]
+    }]
+  }
+}

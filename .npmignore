@@ -1,0 +1,7 @@
+.editorconfig
+.jshintrc
+.babelrc
+/dev
+/build
+/generated
+/production

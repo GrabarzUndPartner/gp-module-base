@@ -1,0 +1,43 @@
+{
+  "name": "gp-module-base",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/GrabarzUndPartner/gp-module-base#readme",
+  "bugs": {
+    "url": "https://github.com/GrabarzUndPartner/gp-module-base/issues"
+  },
+  "license": "GNU GPLv3",
+  "author": "Grabarz & Partner Werbeagentur GmbH",
+  "contributors": [{
+    "name": "Stephan Gerbeth",
+    "email": "stephan.gerbeth@grabarzundpartner.de"
+  }, {
+    "name": "Thorn Walli",
+    "email": "thorn.walli@grabarzundpartner.de"
+  }, {
+    "name": "Boris Horn",
+    "email": "boris.horn@grabarzundpartner.de"
+  }, {
+    "name": "Jan Szidat",
+    "email": "jan.szidat@grabarzundpartner.de"
+  }, {
+    "name": "Fabian Werner",
+    "email": "fabian.werner@grabarzundpartner.de"
+  }],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrabarzUndPartner/gp-module-base.git"
+  },
+  "main": "default.js",
+  "scripts": {
+    "install": "node ./install.js",
+    "build": "MODULE_DEV=true NODE_ENV=build node node_modules/gulp/bin/gulp build --serverConfig=/env/config/hapi/config --gulpTaskConfig=/env/config/",
+    "dev": "MODULE_DEV=true NODE_ENV=development node node_modules/gulp/bin/gulp run --serverConfig=/env/config/hapi/config --gulpTaskConfig=/env/config/ --server=gp-boilerplate-webserver",
+    "dev-ip": "MODULE_DEV=true NODE_ENV=development node node_modules/gulp/bin/gulp run --serverConfig=/env/config/hapi/config --gulpTaskConfig=/env/config/ --server=gp-boilerplate-webserver --ip=true",
+    "prod": "MODULE_DEV=true NODE_ENV=production node node_modules/gulp/bin/gulp run --serverConfig=/env/config/hapi/config --gulpTaskConfig=/env/config/ --server=gp-boilerplate-webserver"
+  },
+  "devDependencies": {
+    "gp-boilerplate": "https://github.com/GrabarzUndPartner/gp-boilerplate.git"
+  },
+  "dependencies": {}
+}

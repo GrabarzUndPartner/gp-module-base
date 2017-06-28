@@ -1,0 +1,82 @@
+---
+layout: "gp-boilerplate-documentation/modules/layouts/default"
+source:
+  headline:
+    text: 'Source'
+atoms:
+  headline:
+    text: 'Atoms'
+modules:
+  headline:
+    text: 'Modules'
+---
+
+{{#mixin "gp-boilerplate-documentation/modules/overview"}}
+
+  {{#content "menu"}}
+
+      {{#mixin "gp-boilerplate-documentation/modules/overview/menu"}}
+
+        {{#content "content"}}
+
+          <div>
+            {{{mixin "gp-boilerplate-documentation/modules/elements/headline" ../../source.headline}}}
+            {{#globTree "src/**/*.hbs"}}
+              {{#each this}}
+                {{{mixin "gp-boilerplate-documentation/modules/elements/accordeon" this}}}
+              {{/each}}
+            {{/globTree}}
+          </div>
+
+          <div>
+            {{{mixin "gp-boilerplate-documentation/modules/elements/headline" ../../organisms.headline}}}
+            {{#globTree "src/tmpl/partials/organisms/**/*.hbs"}}
+              {{#each this}}
+                {{{mixin "gp-boilerplate-documentation/modules/elements/accordeon" this}}}
+              {{/each}}
+            {{/globTree}}
+          </div>
+
+          <div>
+            {{{mixin "gp-boilerplate-documentation/modules/elements/headline" ../../molecules.headline}}}
+            {{#globTree "src/tmpl/partials/molecules/**/*.hbs"}}
+              {{#each this}}
+                {{{mixin "gp-boilerplate-documentation/modules/elements/accordeon" this}}}
+              {{/each}}
+            {{/globTree}}
+          </div>
+
+          <div>
+            {{{mixin "gp-boilerplate-documentation/modules/elements/headline" ../../atoms.headline}}}
+            {{#globTree "src/tmpl/partials/atoms/**/*.hbs"}}
+              {{#each this}}
+                {{{mixin "gp-boilerplate-documentation/modules/elements/accordeon" this}}}
+              {{/each}}
+            {{/globTree}}
+          </div>
+
+          <div>
+            {{{mixin "gp-boilerplate-documentation/modules/elements/headline" ../../svgs.headline}}}
+            {{#globTree "src/tmpl/partials/svgs/**/*.hbs"}}
+              {{#each this}}
+                {{{mixin "gp-boilerplate-documentation/modules/elements/accordeon" this}}}
+              {{/each}}
+            {{/globTree}}
+          </div>
+
+          <div>
+            {{{mixin "gp-boilerplate-documentation/modules/elements/headline" ../../modules.headline}}}
+            {{#globTree "node_modules/gp-module-ui-*/**/*.hbs"}}
+              {{#each this}}
+                {{{mixin "gp-boilerplate-documentation/modules/elements/accordeon" this}}}
+              {{/each}}
+            {{/globTree}}
+          </div>
+
+        {{/content}}
+
+      {{/mixin}}
+
+  {{/content}}
+
+{{/mixin}}

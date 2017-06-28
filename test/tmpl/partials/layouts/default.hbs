@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html class="no-js partial loading" data-partial="layouts/default" lang="{{default.language}}">
+<head>
+  {{#if options.watch.status}}
+  <script type="text/javascript">
+      if('WebSocket' in window || 'MozWebSocket' in window) {
+        var host = (location.host || 'localhost').split(':')[0];
+        document.write('<script src="//' + host + ':{{options.watch.config.port}}/livereload.js?snipver=1"></' + 'script>');
+      }
+  </script>
+  {{/if}}
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta name="viewport" content="{{{globals.head.meta.viewport}}}">
+
+  <meta name="author" content="{{globals.head.meta.author}}">
+  <meta name="description" content="{{description}}">
+  <meta name="keywords" content="{{keywords}}">
+
+  <title>{{title}}</title>
+
+  <link rel="shortcut icon" type="image/x-icon" href="{{relativeToRoot}}{{{globals.head.meta.favicon}}}">
+
+  <style type="text/css">
+      {{{raw options.resources.css.critical}}}
+  </style>
+
+  <link rel="preload" href="{{relativeToRoot}}{{options.resources.css.main}}" as="style" onload="this.rel='stylesheet';" media="screen">
+  <noscript><link rel="stylesheet" href="{{relativeToRoot}}{{options.resources.css.main}}"></noscript>
+  <script type="text/javascript">
+    {{raw options.resources.js.embed}}
+  </script>
+</head>
+<body>
+
+  {% body %}
+
+  {{!-- @TODO JAVASCRIPT CHUNKS - Sets webpackPublicPath variable for override root javascript path. Example: "/js/app.js" -> "/docroot/js/app.js" --}}
+  <script type="text/javascript">
+    window.webpackPublicPath = '{{{relativeToRoot}}}js/';
+  </script>
+  <script type="text/javascript" src="{{{relativeToRoot}}}{{options.resources.js.main}}" async defer></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "name": "webpack",
+  "task": "gp-boilerplate-environment/lib/tasks/webpack",
+  "config": {
+    "subtasks": [{
+      "name": "app",
+      "hotReplacement": true,
+      "entry": {
+        "app": "./test/js/main"
+      },
+      "config": "<%= root %>/env/config/webpack/config",
+      "files": {
+        "src": ["./test/js/main.js"],
+        "dest": "<%= destination %>/js/[name].js",
+        "publicPath": "js/",
+        "library": ["[name]"],
+        "chunkFilename": "app.[chunkhash].js"
+      }
+    }, {
+      "name": "embed",
+      "entry": {
+        "embed": "./test/js/embed"
+      },
+      "config": "<%= root %>/env/config/webpack/config",
+      "files": {
+        "src": ["./test/js/embed"],
+        "dest": "<%= destination %>/js/[name].js",
+        "library": ["[name]"]
+      }
+    }]
+  }
+}
