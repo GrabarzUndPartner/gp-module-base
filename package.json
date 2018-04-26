@@ -1,6 +1,6 @@
 {
   "name": "gp-module-base",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "homepage": "https://github.com/GrabarzUndPartner/gp-module-base#readme",
   "bugs": {
@@ -37,7 +37,7 @@
     "prod": "MODULE_DEV=true NODE_ENV=production node node_modules/gulp/bin/gulp run --serverConfig=/env/config/hapi/config --gulpTaskConfig=/env/config/ --server=gp-boilerplate-webserver"
   },
   "devDependencies": {
-    "gp-boilerplate": "https://github.com/GrabarzUndPartner/gp-boilerplate.git"
+    "gp-boilerplate": "4.0.0"
   },
   "dependencies": {}
 }
